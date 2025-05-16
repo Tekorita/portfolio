@@ -85,30 +85,6 @@
     };
 
 
-    //funcion para el menu
-
-		$(document).ready(function(){
-		  		var altura = $('.menu').offset().top;
-		  		// alert(altura);
-
-		  		$(window).on('scroll', function(){
-		  			if ($(window).scrollTop() > altura ){
-		  				$('.menu').addClass("menu-fixed");
-		  				$('.menu').addClass("z-depth-5");
-		  			}else{
-		  				$('.menu').removeClass("menu-fixed");
-		  				$('.menu').removeClass("z-depth-5");
-		  			}
-
-		  		});
-		  });
-
-
-
-        
-
-
-
     /*    $(document).ready(function(){
             $('.parallax-window1').parallax({imageSrc: 'imagenes/paralax1.png'});
             $('.parallax-window2').parallax({imageSrc: 'imagenes/paralax2.png'});
@@ -168,7 +144,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems, options);
+      var instances = M.Materialbox.init(elems);
     });
   
     // Or with jQuery
