@@ -282,10 +282,11 @@
 							<video 
 							  class="responsive-video" 
 							  style="border-radius: 0; display: block; max-width: 100%; height: auto;" 
-							  playsinline
 							  autoplay 
 							  loop 
-							  muted
+							  muted 
+							  playsinline 
+							  preload="auto"
 							>
 							  <source src="https://videos-mi-portfolio.s3.us-east-1.amazonaws.com/cmf_demo.mp4" type="video/mp4">
 							  Tu navegador no soporta la etiqueta de video.
@@ -342,12 +343,13 @@
 						<div class="col s12 center-align">
 						<div style="display: inline-block; border-radius: 10px; overflow: hidden;" class="z-depth-2">
 							<video 
-							class="responsive-video" 
-							style="border-radius: 0; display: block; max-width: 100%; height: auto;" 
-							playsinline
-							autoplay 
-							loop 
-							muted
+								class="responsive-video" 
+								style="border-radius: 0; display: block; max-width: 100%; height: auto;" 
+								autoplay 
+								loop 
+								muted 
+								playsinline 
+								preload="auto"
 							>
 							<source src="https://videos-mi-portfolio.s3.us-east-1.amazonaws.com/cat_api_demo.mp4" type="video/mp4">
 							Tu navegador no soporta la etiqueta de video.
@@ -404,12 +406,13 @@
 						<div class="col s12 center-align">
 						<div style="display: inline-block; border-radius: 10px; overflow: hidden;" class="z-depth-2">
 							<video 
-							class="responsive-video" 
-							style="border-radius: 0; display: block; max-width: 100%; height: auto;" 
-							playsinline
-							autoplay 
-							loop 
-							muted
+								class="responsive-video" 
+								style="border-radius: 0; display: block; max-width: 100%; height: auto;" 
+								autoplay 
+								loop 
+								muted 
+								playsinline 
+								preload="auto"
 							>
 							<source src="https://videos-mi-portfolio.s3.us-east-1.amazonaws.com/portafolio_demo.mp4" type="video/mp4">
 							Tu navegador no soporta la etiqueta de video.
@@ -1400,5 +1403,16 @@
 				sliderTrack.style.animationPlayState = isPaused ? 'paused' : 'running';
 				});
 			</script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+				  const videos = document.querySelectorAll("video[autoplay]");
+				  videos.forEach(video => {
+					video.play().catch(error => {
+					  // Algunos navegadores bloquean la reproducción automática sin interacción
+					  console.warn("Autoplay bloqueado en móvil:", error);
+					});
+				  });
+				});
+			  </script>
 	</body>
 </html>
