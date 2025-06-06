@@ -4222,3 +4222,27 @@ input, select, textarea {
 		  width: 260px;
 		}
 	  }
+
+	  #skills ul {
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	  }
+	
+	  #skills ul li {
+		display: block; /* cada ítem en su línea */
+		position: relative;
+		padding-left: 1.2rem;
+		margin-bottom: 0.4rem;
+	  }
+	
+	  #skills ul li::before {
+		content: "";
+		position: absolute;
+		top: 0.6em; /* alinea con la primera línea del texto */
+		left: 0;
+		width: 6px;
+		height: 6px;
+		background-color: #D94442;
+		border-radius: 50%;
+	  }
